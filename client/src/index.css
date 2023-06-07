@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body{
+    @apply bg-gray-950;
+    @apply text-white;
+    
+}
+.menu-item a {
+    transition: all 0.2s;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.menu-item .active {
+    @apply bg-gray-900;
+    @apply text-primary
+}
