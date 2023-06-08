@@ -1,6 +1,3 @@
-
 export default function InTheater() {
-  return (
-    <div>inTheater</div>
-  )
+  return <div className="h-screen min-h-[670px] max-h-screen">inTheater</div>;
 }

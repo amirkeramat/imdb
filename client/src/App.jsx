@@ -7,11 +7,11 @@ function App() {
   let router = useRoutes(routs);
 
   return (
-    <>
+    <div>
       <Topbar />
-      <div className="sticky h-full min-h-[600px]" >{router}</div>
+      <div className="h-full min-h-[670px]">{router}</div>
       <Navbar />
-    </>
+    </div>
   );
 }
 

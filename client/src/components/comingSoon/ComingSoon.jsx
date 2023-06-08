@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function ComingSoon() {
   return (
-    <div>ComingSoon</div>
+    <div className='h-screen min-h-[670px]'>ComingSoon</div>
   )
 }
