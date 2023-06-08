@@ -5,7 +5,7 @@ export default function Topbar() {
   const [showMenu, setShowMenu] = useState(false);
 
   return (
-    <div className=" sticky top-0 left-0 right-0 bg-gray-950 h-[50px] text-gray-950 p-4 z-50">
+    <div className=" fixed top-0 left-0 right-0 bg-gray-950 h-[50px] text-gray-950 p-4 z-50">
       <div className="flex justify-between items-center">
         <h1 className="h1 text-primary">Imdb</h1>
         <SlMenu color="white" onClick={() => setShowMenu((prv) => !prv)} />

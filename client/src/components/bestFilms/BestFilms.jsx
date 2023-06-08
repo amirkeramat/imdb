@@ -38,7 +38,7 @@ export default function BestFilms() {
             >
               Prevues
             </button>
-            <h6 className="bg-gray-950 text-primary flex items-center rounded-full justify-center w-[25px] h-[25px]">{page}</h6>
+            <h6 className="bg-gray-950 text-primary flex items-center rounded-full justify-center w-[40px] h-[20px]">{page}</h6>
             <button
               className="w-full bg-primary bg-opacity-75 text-gray-950 p-2 shadow-xl shadow-gray-950"
               onClick={() => {

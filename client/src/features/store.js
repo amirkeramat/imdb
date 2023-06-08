@@ -1,12 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 import filmsReducer from "./films/filmsSlice";
-import { useListMoviesQuery } from "../api/films";
-
+import SearchReducer from "./search/SearchSlice";
+import SearchBoxShowReducer from "./searchBox/SearchBoxSlice";
 const store = configureStore({
-    reducer:{
-        bestFilms:filmsReducer,
-    }
-})
+  reducer: {
+    bestFilms: filmsReducer,
+    showSearchbar: SearchBoxShowReducer,
+    searchResult: SearchReducer,
+  },
+});
 
-export default store
+export default store;
