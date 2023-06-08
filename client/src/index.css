@@ -20,3 +20,6 @@ body{
     @apply bg-gray-900;
     @apply text-primary
 }
+li{
+    @apply cursor-pointer
+}

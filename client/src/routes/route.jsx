@@ -6,7 +6,7 @@ import Home from "../components/home/Home";
 import SearchPage from "../components/searchPage/SearchPage";
 let routs = [
   { path: "/",element:<Home/> },
-  { path: "250films", element: <BestFilms /> },
+  { path: "250films/:pageNumber", element: <BestFilms /> },
   { path: "250tvs", element: <BestTvs /> },
   { path: "comingsoon", element: <ComingSoon /> },
   { path: "intheaters", element: <InTheater /> },

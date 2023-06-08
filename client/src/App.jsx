@@ -12,7 +12,7 @@ function App() {
     <div>
       <Topbar />
       <SearchBox />
-      <div className="pb-[100px]">{router}</div>
+      <div className='py-[75px] px-0 md:px-20'>{router}</div>
       <Navbar />
     </div>
   );

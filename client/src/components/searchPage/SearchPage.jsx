@@ -17,9 +17,9 @@ export default function SearchPage() {
     );
   }, [params.movieName]);
   return (
-    <div className="relative min-h-[100vh]">
-      <div className="grid grid-cols-2 gap-2">
-        {searchResult.loading && <div className=" text-primary">loading</div>}
+    <div className='relative min-h-[100vh]'>
+      <div className='grid grid-cols md:grid-cols-5 py-[75px] gap-2'>
+        {searchResult.loading && <div className=' text-primary'>loading</div>}
         {!searchResult.loading && searchResult.filmsData.length > 0 && (
           <>
             {searchResult.filmsData.map((film) => (
@@ -30,11 +30,14 @@ export default function SearchPage() {
                 genres={film.genres}
                 title={film.title}
                 posters={film.poster}
+                country={film.country}
               />
             ))}
           </>
         )}
-        {!searchResult.loading && !searchResult.filmsData.length && <div className=" text-primary">no data</div>}
+        {!searchResult.loading && !searchResult.filmsData.length && (
+          <div className=' text-primary'>no data</div>
+        )}
       </div>
     </div>
   );
