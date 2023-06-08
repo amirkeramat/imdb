@@ -1,9 +1,13 @@
-import axios from 'axios'
+import {createApi,fetchBaseQuery} from "@reduxjs/toolkit/query/react"
 
 
-export default function getData(url){
-   return axios.get(url)
-}
+export const api = createApi({
+  baseQuery: fetchBaseQuery({ baseUrl: "https://moviesapi.ir/api/v1/" }),
+  endpoints:(builder)=>({
+    listMovies:builder.query({
+      query:(page=1)=>`movies?page=${page}`,
+    })
+  })
+});
 
-Promise.all(getData("https://imdb-api.com/en/API/Top250Movies/k_9io7i122")).then(res=>console.log(res))
-
+export const {useListMoviesQuery} = api

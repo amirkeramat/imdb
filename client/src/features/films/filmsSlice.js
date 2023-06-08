@@ -3,15 +3,15 @@ import axios from "axios";
 
 const initialState = {
   loading: false,
-  films: [],
+  filmsData: {},
   error: "",
 };
 
 //Generates Pending ,fulfilled and rejected action-types
 
-export const FetchFilms = createAsyncThunk("film/fetchFilm", () => {
+export const FetchFilms = createAsyncThunk("film/fetchFilm", (url) => {
   return axios
-    .get("https://imdb-api.com/en/API/Top250Movies/k_9io7i122")
+    .get(url)
     .then((Response) => Response.data);
 });
 
@@ -24,12 +24,12 @@ const filmSlice = createSlice({
     });
     builder.addCase(FetchFilms.fulfilled, (state, action) => {
       (state.loading = false),
-        (state.films = action.payload),
+        (state.filmsData = action.payload.data),
         (state.error = "");
     });
     builder.addCase(FetchFilms.rejected, (state, action) => {
       (state.loading = false),
-        (state.films = []),
+        (state.filmsData = {}),
         (state.error = action.error.message);
     });
   },
