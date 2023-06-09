@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { FetchFilms } from "../../features/films/filmsSlice";
 import LoadingSvg from "/public/Eclipse-1s-200px2.svg";
 import { Link, useParams } from "react-router-dom";
-import MovieBox from "../movieBox/MovieBox";
+import MovieBox from "../../components/movieBox/MovieBox";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 export default function BestFilms() {
   const { pageNumber } = useParams();
   const filmsStore = useSelector((state) => state.bestFilms);
@@ -25,7 +26,7 @@ export default function BestFilms() {
         ))}
       {!filmsStore.loading && filmsStore.filmsData.length && (
         <>
-          <div className='p-4 grid grid-cols md:grid-cols-5 gap-y-2'>
+          <div className='p-4 grid grid-cols sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4 xl:grid-cols-5 gap-y-2 gap-x-0 sm:gap-x-2'>
             {filmsStore.filmsData.map((film) => (
               <MovieBox
                 key={film.id}
@@ -35,22 +36,25 @@ export default function BestFilms() {
                 title={film.title}
                 posters={film.poster}
                 country={film.country}
+                images={film.images}
               />
             ))}
           </div>
-          <div className='flex justify-evenly fixed bottom-[50px] left-0 right-0 z-40 items-center bg-primary '>
+          <div className='flex justify-evenly fixed bottom-[50px] left-0 right-0 z-[999999] items-center bg-primary '>
             <Link
-              className='w-full bg-primary bg-opacity-75 text-gray-950 p-2 shadow-xl shadow-gray-950'
+              className='w-full bg-primary bg-opacity-75 text-gray-950 p-2 shadow-xl shadow-gray-950 flex justify-start items-center'
               to={`/250films/${pageNumber <= 1 ? 1 : Number(pageNumber) - 1}`}>
+              <FaArrowLeft />
               Prevues
             </Link>
             <h6 className='bg-gray-950 text-primary flex items-center rounded-full justify-center w-[40px] h-[20px]'>
               {pageNumber}
             </h6>
             <Link
-              className='w-full bg-primary bg-opacity-75 text-gray-950 p-2 shadow-xl shadow-gray-950'
+              className='w-full bg-primary bg-opacity-75 text-gray-950 p-2 shadow-xl shadow-gray-950 flex items-center justify-end pe-4'
               to={`/250films/${pageNumber >= 25 ? 1 : Number(pageNumber) + 1}`}>
               Next
+              <FaArrowRight />
             </Link>
           </div>
         </>

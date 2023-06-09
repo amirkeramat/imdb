@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
+import  { useEffect } from "react";
 
 import { useSelector, useDispatch } from "react-redux";
 import { FetchSearch } from "../../features/search/SearchSlice";
 import { useParams } from "react-router-dom";
-import MovieBox from "../movieBox/MovieBox";
+import MovieBox from "../../components/movieBox/MovieBox";
 useParams;
 export default function SearchPage() {
   const dispatch = useDispatch();
@@ -18,7 +18,7 @@ export default function SearchPage() {
   }, [params.movieName]);
   return (
     <div className='relative min-h-[100vh]'>
-      <div className='grid grid-cols md:grid-cols-5 py-[75px] gap-2'>
+      <div className='grid grid-cols sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4 xl:grid-cols-5 gap-y-2 gap-x-0 sm:gap-x-2 py-[75px] gap-2'>
         {searchResult.loading && <div className=' text-primary'>loading</div>}
         {!searchResult.loading && searchResult.filmsData.length > 0 && (
           <>
@@ -31,6 +31,7 @@ export default function SearchPage() {
                 title={film.title}
                 posters={film.poster}
                 country={film.country}
+                images={film.images}
               />
             ))}
           </>

@@ -1,9 +1,9 @@
-import BestFilms from "../components/bestFilms/BestFilms";
-import BestTvs from "../components/bestTvs/BestTvs";
-import ComingSoon from "../components/comingSoon/ComingSoon";
-import InTheater from "../components/inTheater/inTheater";
-import Home from "../components/home/Home";
-import SearchPage from "../components/searchPage/SearchPage";
+import BestFilms from "../pages/bestFilms/BestFilms";
+import BestTvs from "../pages/bestTvs/BestTvs";
+import ComingSoon from "../pages/comingSoon/ComingSoon";
+import InTheater from "../pages/inTheater/InTheater";
+import Home from "../pages/home/Home";
+import SearchPage from "../pages/searchPage/SearchPage";
 let routs = [
   { path: "/",element:<Home/> },
   { path: "250films/:pageNumber", element: <BestFilms /> },

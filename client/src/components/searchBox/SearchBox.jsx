@@ -16,7 +16,7 @@ export default function SearchBox() {
   };
   return (
     <div
-      className={`search-box   top-[50px] bottom-[50px] right-0 left-0 fixed z-50 after:content-[''] after:absolute after:h-screen after:top-0  after:left-0 after:right-0 after:bg-gray-950 after:bg-opacity-95  ${
+      className={`search-box   top-[50px] bottom-[50px] right-0 left-0 fixed z-[999999] after:content-[''] after:absolute after:h-screen after:top-0  after:left-0 after:right-0 after:bg-gray-950 after:bg-opacity-95  ${
         showSearchBar ? "block" : "hidden"
       }`}>
       <div className='sticky flex justify-between items-center z-50 p-5'>
