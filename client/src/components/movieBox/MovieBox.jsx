@@ -36,16 +36,16 @@ export default function MovieBox({
     dispatch(showMoreImageAction({ id, show: false }));
   };
   return (
-    <div className=' relative flex flex-col justify-evenly p-4 w-[full] h-[600px] bg-slate-900 rounded-xl space-y-2 text-sm text-start'>
-      <span className=' bg-primary text-gray-950 text-xl flex justify-center items-center rounded-2xl'>
+    <div className=" relative flex flex-col justify-evenly p-4 w-[full] h-[600px] bg-slate-900 rounded-xl space-y-2 text-sm md:text-base text-start">
+      <span className=" bg-primary text-gray-950 text-xl flex justify-center items-center rounded-2xl">
         Rank:
         <h6>{id}</h6>
       </span>
       <img
         onLoad={imageLoadingHandler}
-        className=' relative w-[full] h-[60%] rounded-3xl'
+        className=" relative w-[full] h-[60%] rounded-3xl"
         src={posters}
-        alt=''
+        alt=""
       />
       {images && (
         <Swiper
@@ -53,13 +53,15 @@ export default function MovieBox({
           modules={[Navigation]}
           className={`mySwiper w-full h-[60%] z-[9999]  absolute top-10 right-0 left-0 bottom-0 ${
             showMoreImage.show && showMoreImage.id === id ? "visible" : "hidden"
-          }`}>
+          }`}
+        >
           {images.map((image, index) => (
-            <SwiperSlide key={index} className='w-full h-full'>
+            <SwiperSlide key={index} className="w-full h-full">
               <img
                 src={image}
-                className=' w-full h-full rounded-3xl p-2'
-                alt=''
+                className=" w-full h-full rounded-3xl p-2"
+                alt=""
+                onLoad={imageLoadingHandler}
               />
             </SwiperSlide>
           ))}
@@ -69,21 +71,21 @@ export default function MovieBox({
       {!imageLoadingStore.show && (
         <img src={imageLoadingSvg} onLoad={imageLoadingHandler} />
       )}
-      <span className='flex '>
-        <h6 className='text-primary text-justify'>Name:</h6>
+      <span className="flex ">
+        <h6 className="text-primary text-justify">Name:</h6>
         {title}
       </span>
-      <span className='flex '>
-        <h6 className='text-primary'>Year:</h6>
+      <span className="flex ">
+        <h6 className="text-primary">Year:</h6>
         {year}
       </span>
-      <span className='flex '>
-        <h6 className='text-primary'>Country:</h6>
+      <span className="flex ">
+        <h6 className="text-primary">Country:</h6>
         {country}
       </span>
       {genres && (
-        <span className='flex'>
-          <h6 className='text-primary'>genres:</h6>
+        <span className="flex">
+          <h6 className="text-primary">genres:</h6>
           {genres.map((genre, index) => (
             <h6 key={index}>{genre},</h6>
           ))}
@@ -96,15 +98,17 @@ export default function MovieBox({
             ? "after:block"
             : "after:hidden"
         }`}
-        onClick={showMoreImageHandler}>
-        <CiCircleMore className='text-primary me-2' />
+        onClick={showMoreImageHandler}
+      >
+        <CiCircleMore className="text-primary me-2" />
         More Image
       </span>
       <span
         onClick={hideMoreImageHandler}
         className={`absolute top-2 right-2 z-[9999] text-primary text-2xl cursor-pointer ${
           showMoreImage.show && showMoreImage.id === id ? "block" : "hidden"
-        }`}>
+        }`}
+      >
         <AiOutlineCloseCircle />
       </span>
     </div>

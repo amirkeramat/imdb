@@ -5,6 +5,8 @@ import SearchReducer from "./search/SearchSlice";
 import SearchBoxShowReducer from "./searchBox/SearchBoxSlice";
 import imageLoadingReducer from "./imageLoading/ImageLoading";
 import filmDescriptionReducer from "./filmDescription/FilmDescription";
+import genresReducer from './genres/GenresSlice'
+import showMenuReducer from './menu/MenuSlice'
 const store = configureStore({
   reducer: {
     bestFilms: filmsReducer,
@@ -12,6 +14,8 @@ const store = configureStore({
     searchResult: SearchReducer,
     imageLoading: imageLoadingReducer,
     showFilmDescriptionAction: filmDescriptionReducer,
+    genres: genresReducer,
+    showMenu: showMenuReducer,
   },
 });
 
