@@ -46,10 +46,10 @@ export default function Topbar() {
       >
         <ul className="flex flex-col py-2 items-center">
           <li className="p-2">
-            <NavLink to={"/250films"}>SignUp</NavLink>
+            <NavLink to={"/register"}>SignUp</NavLink>
           </li>
           <li className="p-2">
-            <NavLink to={"/250films"}>LogIn</NavLink>
+            <NavLink to={"/login"}>LogIn</NavLink>
           </li>
           <li className="p-2">
             <NavLink to={"/250films"}>TOP250Films</NavLink>
