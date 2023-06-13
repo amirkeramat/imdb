@@ -22,9 +22,9 @@ export default function Topbar() {
   };
 
   return (
-    <div className=" fixed top-0 left-0 right-0 bg-gray-950 h-[50px] text-gray-950 p-4 z-[9999999]">
-      <div className="flex justify-between items-center">
-        <h1 className="h1 text-primary">Imdb</h1>
+    <div className=" fixed top-0 left-0 right-0 bg-gray-950 h-[50px] text-gray-950 px-4 z-[9999999]">
+      <div className="flex justify-between items-center h-full">
+        <h1 className="h1 text-gray-950 font-extrabold text-lg px-4 py-1 rounded-xl bg-primary">IMDB</h1>
         {!mainMenuShow ? (
           <SlMenu
             className=" cursor-pointer"
@@ -40,22 +40,19 @@ export default function Topbar() {
         )}
       </div>
       <div
-        className={`bg-gray-950 text-primary overflow-hidden transition-all ease-in duration-500 mt-2 ${
+        className={`bg-gray-800 text-primary overflow-hidden transition-all ease-in duration-500 ${
           mainMenuShow ? "max-h-[350px]" : "max-h-0 "
         }`}
       >
         <ul className="flex flex-col py-2 items-center">
           <li className="p-2">
+            <NavLink to={"/250films"}>SignUp</NavLink>
+          </li>
+          <li className="p-2">
+            <NavLink to={"/250films"}>LogIn</NavLink>
+          </li>
+          <li className="p-2">
             <NavLink to={"/250films"}>TOP250Films</NavLink>
-          </li>
-          <li className="p-2">
-            <NavLink to={"/250tvs"}>TOP250Tvs</NavLink>
-          </li>
-          <li className="p-2">
-            <NavLink to={"/comingsoon"}>COMINGSOON</NavLink>
-          </li>
-          <li className="p-2">
-            <NavLink to={"/intheaters"}>INTHEATERS</NavLink>
           </li>
           <li className="p-2 flex items-center flex-col">
             <div onClick={genresSubMenuHandler} className="flex items-center">

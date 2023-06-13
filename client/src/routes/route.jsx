@@ -1,18 +1,19 @@
 import BestFilms from "../pages/bestFilms/BestFilms";
-import BestTvs from "../pages/bestTvs/BestTvs";
-import ComingSoon from "../pages/comingSoon/ComingSoon";
-import InTheater from "../pages/inTheater/InTheater";
 import Home from "../pages/home/Home";
+import Login from "../pages/login/login";
+import Register from "../pages/register/Register";
 import SearchPage from "../pages/searchPage/SearchPage";
 import Genres from "../pages/genres/Genres";
+import MovieDetail from "../pages/movieDetail/MovieDetail";
 let routs = [
   { path: "/", element: <Home /> },
+  { path: "/register", element: <Register /> },
+  { path: "/login", element: <Login /> },
   { path: "250films/:pageNumber", element: <BestFilms /> },
-  { path: "250tvs", element: <BestTvs /> },
-  { path: "comingsoon", element: <ComingSoon /> },
-  { path: "intheaters", element: <InTheater /> },
   { path: "searchMovie/:name/:ID", element: <SearchPage /> },
+  { path: "searchMovie/:name", element: <SearchPage /> },
   { path: "allGenres", element: <Genres /> },
+  { path: "movieDetail/:movieName/:movieID", element: <MovieDetail /> },
 ];
 
 export default routs;

@@ -1,0 +1,18 @@
+.movie-detail .swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.movie-detail .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 500px;
+    height: 400px;
+}
+
+.movie-detail .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 400px;
+}

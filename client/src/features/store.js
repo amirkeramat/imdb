@@ -5,8 +5,9 @@ import SearchReducer from "./search/SearchSlice";
 import SearchBoxShowReducer from "./searchBox/SearchBoxSlice";
 import imageLoadingReducer from "./imageLoading/ImageLoading";
 import filmDescriptionReducer from "./filmDescription/FilmDescription";
-import genresReducer from './genres/GenresSlice'
-import showMenuReducer from './menu/MenuSlice'
+import genresReducer from "./genres/GenresSlice";
+import showMenuReducer from "./menu/MenuSlice";
+import filmDetailReducer from "./filmDetail/FilmDetailSlice";
 const store = configureStore({
   reducer: {
     bestFilms: filmsReducer,
@@ -16,6 +17,7 @@ const store = configureStore({
     showFilmDescriptionAction: filmDescriptionReducer,
     genres: genresReducer,
     showMenu: showMenuReducer,
+    singleFilmData: filmDetailReducer,
   },
 });
 
