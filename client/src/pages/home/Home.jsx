@@ -21,7 +21,7 @@ export default function Home() {
   const dispatch = useDispatch();
   const { filmsData, loading } = useSelector((state) => state.bestFilms);
   return (
-    <div className='flex justify-center flex-col items-center'>
+    <div className='flex justify-center flex-col items-center pt-[50px]'>
       {!filmsData.length && loading && (
         <div className='flex justify-center bg-opacity-50 items-center fixed top-[50px] left-0 right-0 bottom-[85px] after:content-[""] after:absolute after:top-0 after:h-screen after:bottom-0 after:left-0 after:right-0 bg-gray-950 after:bg-opacity-50 z-[999]'>
           <img src={LoadingSvg} alt='' />
