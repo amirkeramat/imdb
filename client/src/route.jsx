@@ -1,9 +1,9 @@
-import BestFilms from "../pages/bestFilms/BestFilms";
-import Home from "../pages/home/Home";
-import SearchPage from "../pages/searchPage/SearchPage";
-import Genres from "../pages/genres/Genres";
-import MovieDetail from "../pages/movieDetail/MovieDetail";
-import ErrorPage from '../pages/errorPage/ErrorPage'
+import BestFilms from "./pages/bestFilms/BestFilms";
+import Home from "./pages/home/Home";
+import SearchPage from "./pages/searchPage/SearchPage";
+import Genres from "./pages/genres/Genres";
+import MovieDetail from "./pages/movieDetail/MovieDetail";
+import ErrorPage from './pages/errorPage/ErrorPage'
 let routs = [
   { path: "/", element: <Home /> },
   { path: "250films/:pageNumber", element: <BestFilms /> },
