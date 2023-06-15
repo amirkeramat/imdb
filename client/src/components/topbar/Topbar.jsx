@@ -22,19 +22,21 @@ export default function Topbar() {
   };
 
   return (
-    <div className=" fixed top-0 left-0 right-0 bg-gray-950 h-[50px] text-gray-950  z-[9999999] px-4 sm:px-[100px]">
-      <div className="flex justify-between items-center h-full">
-        <h1 className="h1 text-gray-950 font-extrabold text-lg px-4 py-1 rounded-xl bg-primary">IMDB</h1>
+    <div className=' fixed top-0 left-0 right-0 bg-gray-950 h-[50px] text-gray-950  z-[9999999] px-4 sm:px-[100px]'>
+      <div className='flex justify-between items-center h-full'>
+        <h1 className='h1 text-gray-950 font-extrabold text-lg px-4 py-1 rounded-xl bg-primary'>
+          IMDB
+        </h1>
         {!mainMenuShow ? (
           <SlMenu
-            className=" cursor-pointer"
-            color="white"
+            className=' cursor-pointer'
+            color='white'
             onClick={() => dispatch(showMenuAction())}
           />
         ) : (
           <FaArrowUp
-            className=" cursor-pointer"
-            color="white"
+            className=' cursor-pointer'
+            color='white'
             onClick={() => dispatch(showMenuAction())}
           />
         )}
@@ -42,24 +44,22 @@ export default function Topbar() {
       <div
         className={`bg-gray-800 text-primary overflow-hidden transition-all ease-in duration-500 ${
           mainMenuShow ? "max-h-[400px]" : "max-h-0 "
-        }`}
-      >
-        <ul className="flex flex-col py-2 items-center">
-          <li className="p-2">
-            <NavLink to={"/250films"}>TOP250Films</NavLink>
+        }`}>
+        <ul className='flex flex-col py-2 items-center'>
+          <li className='p-2'>
+            <NavLink to={"/250films/1"}>TOP250Films</NavLink>
           </li>
-          <li className="p-2 flex items-center flex-col">
-            <div onClick={genresSubMenuHandler} className="flex items-center">
-              <FaArrowCircleDown className="me-2" />
+          <li className='p-2 flex items-center flex-col'>
+            <div onClick={genresSubMenuHandler} className='flex items-center'>
+              <FaArrowCircleDown className='me-2' />
               <h6>Genres</h6>
             </div>
 
             <div
               className={` overflow-y-hidden transition-all ease-in duration-500 ${
                 subMenuShow ? "max-h-[350px]" : "max-h-0"
-              }`}
-            >
-              <ul className="p-2 grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-2">
+              }`}>
+              <ul className='p-2 grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-2'>
                 {genresData && (
                   <>
                     {genresData.slice(1, 10).map((genres) => (
@@ -68,12 +68,10 @@ export default function Topbar() {
                           dispatch(showMenuAction());
                           dispatch(showSubMenuAction());
                         }}
-                        className="py-[0.1rem]"
-                        key={genres.id}
-                      >
+                        className='py-[0.1rem]'
+                        key={genres.id}>
                         <NavLink
-                          to={`/searchMovie/${genres.name}/${genres.id}`}
-                        >
+                          to={`/searchMovie/${genres.name}/${genres.id}`}>
                           {genres.name}
                         </NavLink>
                       </li>
@@ -82,8 +80,7 @@ export default function Topbar() {
                       onClick={() => {
                         dispatch(showMenuAction());
                         dispatch(showSubMenuAction());
-                      }}
-                    >
+                      }}>
                       <NavLink to={"/allGenres"}>More...</NavLink>
                     </li>
                   </>
