@@ -23,7 +23,7 @@ export default function SearchPage() {
     }
   }, [name,ID]);
   return (
-    <div className='relative min-h-[100vh] px-0 sm:px-[100px]'>
+    <div className='relative min-h-[100vh] px-0 sm:px-[100px] pt-[100px] pb-[50px]'>
       <h1 className=' text-primary text-3xl text-center '>{name} Movies</h1>
       <div className='grid grid-cols sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4 xl:grid-cols-5 gap-y-2 gap-x-0 sm:gap-x-2 py-[50px] gap-2'>
         {searchResult.loading && (
