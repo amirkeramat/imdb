@@ -16,7 +16,7 @@ export default function Genres() {
             {genresData.map((genre) => (
               <NavLink
                 to={`/searchMovie/${genre.name}/${genre.id}`}
-                className="w-[200px] flex items-center justify-center bg-gray-700 rounded-xl px-4 py-2"
+                className="w-[200px] flex items-center justify-center bg-gray-700 rounded-xl px-2 sm:px-4 py-2"
                 key={genre.id}
               >
                 {genre.name}
