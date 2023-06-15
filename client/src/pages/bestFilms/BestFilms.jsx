@@ -15,7 +15,7 @@ export default function BestFilms() {
     );
   }, [pageNumber]);
   return (
-    <div className=' relative'>
+    <div className=' relative px-0 sm:px-[100px] pb-[100px]'>
       <h1 className=' text-primary text-3xl text-center '>250 Films</h1>
 
       {!filmsStore.loading ||
@@ -40,7 +40,7 @@ export default function BestFilms() {
               />
             ))}
           </div>
-          <div className='flex justify-evenly fixed bottom-[50px] left-0 right-0 z-[999999] items-center bg-primary '>
+          <div className='flex justify-evenly fixed bottom-[50px] left-0 right-0 z-[999999] items-center bg-primary px-0 sm:mx-[100px] '>
             <Link
               className='w-full bg-primary bg-opacity-75 text-gray-950 p-2 shadow-xl shadow-gray-950 flex justify-start items-center'
               to={`/250films/${pageNumber <= 1 ? 1 : Number(pageNumber) - 1}`}>

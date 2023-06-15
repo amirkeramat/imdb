@@ -22,7 +22,7 @@ export default function Topbar() {
   };
 
   return (
-    <div className=" fixed top-0 left-0 right-0 bg-gray-950 h-[50px] text-gray-950 px-4 z-[9999999]">
+    <div className=" fixed top-0 left-0 right-0 bg-gray-950 h-[50px] text-gray-950  z-[9999999] px-4 sm:px-[100px]">
       <div className="flex justify-between items-center h-full">
         <h1 className="h1 text-gray-950 font-extrabold text-lg px-4 py-1 rounded-xl bg-primary">IMDB</h1>
         {!mainMenuShow ? (
@@ -41,16 +41,10 @@ export default function Topbar() {
       </div>
       <div
         className={`bg-gray-800 text-primary overflow-hidden transition-all ease-in duration-500 ${
-          mainMenuShow ? "max-h-[350px]" : "max-h-0 "
+          mainMenuShow ? "max-h-[400px]" : "max-h-0 "
         }`}
       >
         <ul className="flex flex-col py-2 items-center">
-          <li className="p-2">
-            <NavLink to={"/register"}>SignUp</NavLink>
-          </li>
-          <li className="p-2">
-            <NavLink to={"/login"}>LogIn</NavLink>
-          </li>
           <li className="p-2">
             <NavLink to={"/250films"}>TOP250Films</NavLink>
           </li>
@@ -62,13 +56,13 @@ export default function Topbar() {
 
             <div
               className={` overflow-y-hidden transition-all ease-in duration-500 ${
-                subMenuShow ? "max-h-[300px]" : "max-h-0"
+                subMenuShow ? "max-h-[350px]" : "max-h-0"
               }`}
             >
-              <ul className="p-2">
+              <ul className="p-2 grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-2">
                 {genresData && (
                   <>
-                    {genresData.slice(1, 5).map((genres) => (
+                    {genresData.slice(1, 10).map((genres) => (
                       <li
                         onClick={() => {
                           dispatch(showMenuAction());
