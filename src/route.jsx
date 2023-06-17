@@ -1,10 +1,10 @@
-import BestFilms from "../pages/bestFilms/BestFilms";
-import Home from "../pages/home/Home";
-import Login from "../pages/login/login";
-import Register from "../pages/register/Register";
-import SearchPage from "../pages/searchPage/SearchPage";
-import Genres from "../pages/genres/Genres";
-import MovieDetail from "../pages/movieDetail/MovieDetail";
+import BestFilms from "./pages/bestFilms/BestFilms";
+import Home from "./pages/home/Home";
+import Login from "./pages/login/login";
+import Register from "./pages/register/Register";
+import SearchPage from "./pages/searchPage/SearchPage";
+import Genres from "./pages/genres/Genres";
+import MovieDetail from "./pages/movieDetail/MovieDetail";
 let routs = [
   { path: "/", element: <Home /> },
   { path: "/register", element: <Register /> },
