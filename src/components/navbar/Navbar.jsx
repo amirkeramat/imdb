@@ -15,6 +15,11 @@ export default function Navbar() {
             <FaHome />
           </NavLink>
         </li>
+        <li className="menu-item bg-primary w-[98%] h-[50px] flex justify-center items-center  shadow-2xl shadow-gray-900">
+          <NavLink to={"/250films/1"}>
+            <FaHeart />
+          </NavLink>
+        </li>
         <li
           onClick={showSearchBoxHandler}
           className="menu-item bg-primary w-[98%] h-[50px] flex justify-center items-center  shadow-2xl shadow-gray-900"
@@ -23,16 +28,7 @@ export default function Navbar() {
             <FaSearch />
           </button>
         </li>
-        <li className="menu-item bg-primary w-[98%] h-[50px] flex justify-center items-center  shadow-2xl shadow-gray-900">
-          <NavLink to={"/250films/1"}>
-            <FaHeart />
-          </NavLink>
-        </li>
-        <li className="menu-item bg-primary w-[98%] h-[50px] flex justify-center items-center  shadow-2xl shadow-gray-900">
-          <NavLink to={"/login"}>
-            <FaUserAlt />
-          </NavLink>
-        </li>
+
       </ul>
     </div>
   );

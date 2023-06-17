@@ -24,7 +24,7 @@ export default function Topbar() {
   return (
     <div className=" fixed top-0 left-0 right-0 bg-gray-950 h-[50px] text-gray-950 px-4 z-[9999999]">
       <div className="flex justify-between items-center h-full">
-        <h1 className="h1 text-gray-950 font-extrabold text-lg px-4 py-1 rounded-xl bg-primary">IMDB</h1>
+        <NavLink to={'/'} className="h1 text-gray-950 font-extrabold text-lg px-4 py-1 rounded-xl bg-primary">IMDB</NavLink>
         {!mainMenuShow ? (
           <SlMenu
             className=" cursor-pointer"
@@ -46,13 +46,7 @@ export default function Topbar() {
       >
         <ul className="flex flex-col py-2 items-center">
           <li className="p-2">
-            <NavLink to={"/register"}>SignUp</NavLink>
-          </li>
-          <li className="p-2">
-            <NavLink to={"/login"}>LogIn</NavLink>
-          </li>
-          <li className="p-2">
-            <NavLink to={"/250films"}>TOP250Films</NavLink>
+            <NavLink to={"/250films/1"}>TOP250Films</NavLink>
           </li>
           <li className="p-2 flex items-center flex-col">
             <div onClick={genresSubMenuHandler} className="flex items-center">
